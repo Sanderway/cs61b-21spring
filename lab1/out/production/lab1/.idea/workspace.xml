@@ -13,9 +13,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2Xya6gKKNA1Dk52hTdsLJr3aGCD" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,11 +27,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/THU/IT/网课/cs61b/cs61b-21spring/lab2",
+    "last_opened_file_path": "E:/THU/IT/网课/cs61b/cs61b-21spring/lab3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -65,7 +67,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699603600267</updated>
-      <workItem from="1699603601253" duration="714000" />
+      <workItem from="1699603601253" duration="2112000" />
+      <workItem from="1699609141690" duration="231000" />
+      <workItem from="1699609385443" duration="711000" />
+      <workItem from="1699793294610" duration="186000" />
     </task>
     <servers />
   </component>

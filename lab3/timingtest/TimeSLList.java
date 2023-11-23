@@ -1,5 +1,8 @@
 package timingtest;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 import edu.princeton.cs.algs4.Stopwatch;
 
 /**
@@ -24,6 +27,7 @@ public class TimeSLList {
 
     public static void timeGetLast() {
         // TODO: YOUR CODE HERE
+<<<<<<< HEAD
         int M = 10000;
         AList<Integer> Ns = new AList<>();
         for (int x = 1000; x <= 128000; x = x * 2) {
@@ -45,6 +49,8 @@ public class TimeSLList {
             example = new SLList<>();
         }
         printTimingTable(Ns, times, opCounts);
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
     }
 
 }

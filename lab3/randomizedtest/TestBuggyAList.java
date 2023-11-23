@@ -2,13 +2,17 @@ package randomizedtest;
 
 import edu.princeton.cs.algs4.StdRandom;
 import org.junit.Test;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 import static org.junit.Assert.*;
 
 /**
  * Created by hug.
  */
 public class TestBuggyAList {
+<<<<<<< HEAD
     // YOUR TESTS HERE
     @Test
     public void testThreeAddThreeRemove() {
@@ -54,4 +58,7 @@ public class TestBuggyAList {
         testThreeAddThreeRemove();
         randomizedTest();
     }
+=======
+  // YOUR TESTS HERE
+>>>>>>> 160747451c147c59d8e3cbf70a7afee2b73bebdb
 }
