@@ -306,4 +306,29 @@ public class Model extends Observable {
     public int hashCode() {
         return toString().hashCode();
     }
+    public class IntList {
+        public int first;
+        public IntList rest;
+
+        public IntList(int f, IntList r) {
+            this.first = f;
+            this.rest = r;
+        }
+    }
+
+    public static void evenOdd(IntList lst){
+        if (lst.rest == null){
+            return;
+        }
+
+
+        while (){
+            p = lst.rest.rest;
+            lst.rest.rest = lst;
+            lst.rest = p;
+
+        }
+        evenOdd(lst.rest);
+    }
 }
+
