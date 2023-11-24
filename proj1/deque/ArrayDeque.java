@@ -174,11 +174,11 @@ public class ArrayDeque<T> implements Iterable<T> {
         if (this == o) {
             return true;
         }
-        if (o instanceof ArrayDeque otherDeque) {
-            if (this.size != otherDeque.size) {
+        if (o instanceof ArrayDeque) {
+            if (this.size != ((ArrayDeque<?>) o).size) {
                 return false;
             }
-            Iterator otherIterator = otherDeque.iterator();
+            Iterator otherIterator = ((ArrayDeque<?>) o).iterator();
             for (T t : this) {
                 if (!t.equals(otherIterator.next())) {
                     return false;
