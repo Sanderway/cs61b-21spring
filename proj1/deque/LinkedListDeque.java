@@ -2,7 +2,7 @@ package deque;
 
 import java.util.Iterator;
 
-public class LinkedListDeque<T> implements Iterable<T> {
+public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
     private int size;
     private IntNode sentinel;
 
@@ -21,11 +21,6 @@ public class LinkedListDeque<T> implements Iterable<T> {
     public LinkedListDeque() {
         size = 0;
         sentinel = new IntNode(null, null, null);
-    }
-
-    // Return true if the deque is empty.
-    public boolean isEmpty() {
-        return size == 0;
     }
 
     // Add an item to the front of the deque.
