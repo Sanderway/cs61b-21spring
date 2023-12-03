@@ -2,16 +2,16 @@ package deque;
 
 import java.util.Iterator;
 
-public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
+public class LinkedListDeque<T> implements Iterable<T>, Deque<T> {
     private int size;
     private IntNode sentinel;
 
     private class IntNode {
-        public T item;
-        public IntNode prev;
-        public IntNode next;
+        private T item;
+        private IntNode prev;
+        private IntNode next;
 
-        public IntNode(T element, IntNode prevNode, IntNode nextNode) {
+        private IntNode(T element, IntNode prevNode, IntNode nextNode) {
             item = element;
             prev = prevNode;
             next = nextNode;
@@ -95,10 +95,10 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
 
     // Gets the item at the given index, where 0 is the front, 1 is the next item, and so forth.
     public T get(int index) {
-        if (isEmpty()){
+        if (isEmpty()) {
             return null;
         }
-        if (index > size || index < 0) {
+        if (index >= size || index < 0) {
             return null;
         }
         int i = 0;
@@ -117,7 +117,12 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
         if (this == o) {
             return true;
         }
-        if (o instanceof LinkedListDeque) {
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof LinkedListDeque)) {
+            return false;
+        } else {
             if (this.size != ((LinkedListDeque<?>) o).size) {
                 return false;
             }
@@ -132,15 +137,15 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
     }
 
     // Same as get, but uses recursion.
-    public T getRecursive(int index) {
-        if (index > size && index < 0){
+    private T getRecursive(int index) {
+        if (index > size && index < 0) {
             return null;
         }
         return getRecursiveHelper(index, sentinel.next);
     }
 
     // Help getRecursive.
-    public T getRecursiveHelper(int i, IntNode nextDeque) {
+    private T getRecursiveHelper(int i, IntNode nextDeque) {
         if (i == 0) {
             return nextDeque.item;
         } else {
@@ -162,13 +167,19 @@ public class LinkedListDeque<T> implements Iterable<T>,Deque<T> {
         }
 
         public boolean hasNext() {
+            if (isEmpty()) {
+                return false;
+            }
             return wizNode.next != sentinel;
         }
 
         public T next() {
+            if (hasNext()) {
                 T returnItem = wizNode.item;
                 wizNode = wizNode.next;
                 return returnItem;
+            }
+            return null;
         }
     }
 

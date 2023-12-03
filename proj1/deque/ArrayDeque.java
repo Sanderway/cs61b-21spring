@@ -1,9 +1,8 @@
 package deque;
 
-import java.lang.reflect.Array;
 import java.util.Iterator;
 
-public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
+public class ArrayDeque<T> implements Iterable<T>, Deque<T> {
     private T[] items;
     private int size;
     private int nextFirst;
@@ -91,7 +90,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
         if (isEmpty()) {
             return;
         }
-
+        circular();
         realIndex();
 
         if (realFirst < realLast) {
@@ -118,6 +117,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
         if (size < items.length * 0.25 && items.length > 16) {
             resize(items.length / 2);
         }
+        circular();
         realIndex();
         T removeItem = items[realFirst];
         items[realFirst] = null;
@@ -134,6 +134,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
         if (size < items.length * 0.25 && items.length > 16) {
             resize(items.length / 2);
         }
+        circular();
         realIndex();
         T removeItem = items[realLast];
         items[realLast] = null;
@@ -150,6 +151,7 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
         if (index >= size || index < 0) {
             return null;
         }
+        circular();
         realIndex();
         int itemIndex = realFirst + index;
         if (itemIndex >= items.length) {
@@ -202,7 +204,12 @@ public class ArrayDeque<T> implements Iterable<T>,Deque<T> {
         if (this == o) {
             return true;
         }
-        if (o instanceof ArrayDeque) {
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof ArrayDeque)) {
+            return false;
+        } else {
             if (this.size != ((ArrayDeque<?>) o).size) {
                 return false;
             }
